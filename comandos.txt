@@ -1,0 +1,12 @@
+Solucao tpc
+1. SELECT * FROM `provincia` as pr INNER JOIN distrito as dt INNER JOIN funcionario as func 
+WHERE pr.id = dt.provincia_id AND dt.id = func.distrito_id
+Sucesso inner join
+SELECT * FROM `provincia` as pr INNER JOIN distrito as dt INNER JOIN funcionario as 
+func WHERE pr.id = dt.provincia_id AND dt.id = func.distrito_id
+
+2. SELECT * FROM `funcionario` as func LEFT JOIN ficha_funcionario as ficha ON func.id = ficha.funcionario_id
+
+3.SELECT * FROM `funcionario` as func RIGHT JOIN ficha_funcionario as ficha ON func.id = ficha.funcionario_id
+
+4.CREATE TRIGGER `pagamento` AFTER INSERT ON `pagamento` FOR EACH ROW INSERT INTO funcionario (funcionario.salario) VALUES (NEW.salario)
